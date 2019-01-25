@@ -1,13 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Vocabularize extracts vocab from your textfile
-  form(method='post', enctype='multipart/form-data')
-    input(type='file', name='file-to-upload', value='Pick textfile')
-    input(type='submit', name='uploadFile', value='Get Vocab')
+    
+  div(class="demo-card-square mdl-card mdl-shadow--2dp")
+    div(class="mdl-card__title mdl-card--expand")
+      h2(class="mdl-card__title-text") Vocabularize
+    
+    div(class="mdl-card__supporting-text")
+      Vocabularize extracts vocab from your textfile
+    
+    div(class="mdl-card__actions mdl-card--border")      
+      form(method='post', enctype='multipart/form-data')
+        input(type='file', id='file-to-upload', name='file-to-upload', style="display:none", value='Pick textfile')
+        label(for="file-to-upload" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent") pick text file
+        input(type='submit', name='uploadFile', value='Get Vocab' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent')
+      if output
+        div(class="mdl-textfield mdl-js-textfield")
+          textarea(class="mdl-textfield__input" type="text" rows= "3" id="sample5" ) #{output}
+          label(class="mdl-textfield__label" for="sample5") Text lines...
 
-  if output
-    textarea= output 
-  else
-    textarea= "hello output" 

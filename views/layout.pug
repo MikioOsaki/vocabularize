@@ -2,6 +2,14 @@ doctype html
 html
   head
     title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css')
+    link(rel='icon' type='image/png' href='/images/309218.png')
+    script(src='https://code.getmdl.io/1.3.0/material.min.js')
   body
-    block content
+    div(class="mdl-grid")
+      div(class="mdl-cell mdl-cell--1-col")
+       block content
